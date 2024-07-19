@@ -3,6 +3,3 @@
     - name: uninstall the crowdstrike falcon sensor
       ansible.builtin.include_role:
         name: crowdstrike.falcon.falcon_uninstall
-#      vars:
-#        falcon_windows_uninstall_args:
-#           /norestart
