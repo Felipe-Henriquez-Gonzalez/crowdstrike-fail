@@ -1,0 +1,11 @@
+- hosts: windows
+  tasks:
+    - name: uninstall the crowdstrike falcon sensor
+      ansible.bouiltin.include_module:
+        name: crowdstrike.falcon.falcon_uninstall
+      vars:
+        falcon_windows_uninstall_args:
+           /norestart
+           MAINTENANCE_TOKEN="{{Falcon_Maintenance_Tocken}}
+
+~   
