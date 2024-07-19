@@ -18,7 +18,7 @@
           {{ 'present' if  file_check.matched else 'not present' }}
 
     - name: Remove problematic files
-      ansible.builtin.file:
+      ansible.windows.win_file:
         state: absent
         path: "{{ item.path }}"
       loop: file_check.files
