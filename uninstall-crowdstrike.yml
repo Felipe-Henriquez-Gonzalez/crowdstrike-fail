@@ -1,5 +1,6 @@
-- hosts: windows
+- name: Uninstall Crowdstrike Falcon and remediate 2024-07-19 incident
+  hosts: windows
   tasks:
-    - name: uninstall the crowdstrike falcon sensor
+    - name: Uninstall the crowdstrike falcon sensor
       ansible.builtin.include_role:
         name: crowdstrike.falcon.falcon_uninstall

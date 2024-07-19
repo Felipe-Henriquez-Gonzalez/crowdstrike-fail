@@ -1,10 +1,11 @@
-para poder ejecutar este playbook debes tener lo siguiente
+# Description
+Playbook to uninstall Falcon Agent from Crowdstrike and remediate the incident
+on July 19, 2024 using Ansible
 
-Credenciales de windows 
+## Required
+ - Execution environment: build from `/Execution-Environment` directory or find ready-made at https://quay.io/repository/hugogonzalezrh/ees/ee-windowspluscrowdstrike-rhel8
 
-un EE que contenga lo siguiente
 
-La colección crowdstrike.falcon
-la libreria pywinrm
-
-en el caso de que tus servidores Windows  tengan kerberos la configuracion de kerberos en el EE
+## Authors
+- Felipe Henríquez G. <fhenriqu@redhat.com>
+- Hugo F. González <hgonzale@redhat.com>
