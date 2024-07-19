@@ -4,3 +4,21 @@
     - name: Uninstall the crowdstrike falcon sensor
       ansible.builtin.include_role:
         name: crowdstrike.falcon.falcon_uninstall
+
+    - name: Check if the file C-00000291*.sys exists
+      ansible.windows.win_find:
+        paths: "C:\\Windows\\System32\\drivers"
+        patterns: "C-00000291*.sys"
+      register: file_check
+
+    - name: Display file check result
+      ansible.builtin.debug:
+        msg: >-
+          The file C-00000291*.sys is
+          {{ 'present' if  file_check.matched else 'not present' }}
+
+    - name: Remove problematic files
+      ansible.builtin.file:
+        state: absent
+        path: "{{ item.path }}"
+      loop: file_check.files
